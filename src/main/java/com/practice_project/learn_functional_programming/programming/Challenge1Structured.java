@@ -23,11 +23,16 @@ public class Challenge1Structured {
 //		  .forEach(System.out::println);
 		
 		// Print the course names that contain at least 4 letters.
+//		courses.stream()
+//		  .filter(course -> course.length() >= 4)
+//		  .forEach(System.out::println);
+		
+		// Print number of characters of each string.
 		courses.stream()
-		  .filter(course -> course.length() >= 4)
-		  .forEach(System.out::println);
+			   .map(course -> course + " " + course.length())
+			   .forEach(System.out::println);
+		}
 
-	}
 
 	private static void printAllNumbersInListStructured(List<Integer> numbers) {
 		// How do we loop all the numbers?

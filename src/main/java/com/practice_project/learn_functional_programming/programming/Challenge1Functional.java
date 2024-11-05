@@ -10,7 +10,9 @@ public class Challenge1Functional {
 		
 		//printAllNumbersInListFunctional(numbers);
 		//printEvenNumbersInListFunctional(numbers);
-		printOddNumbersInListFunctional(numbers);
+		//printOddNumbersInListFunctional(numbers);
+		//printSquaresOfEvenNumbersInListFunctional(numbers);
+		printCubeOfOddNumbersInListFunctional(numbers);
 
 	}
 	
@@ -53,6 +55,24 @@ public class Challenge1Functional {
 	private static void printOddNumbersInListFunctional(List<Integer> numbers) {
 		numbers.stream()
 			  .filter(number -> number % 2 != 0)
+			  .forEach(System.out::println);
+	}
+	
+	// How do we print the squares of each even number?
+	private static void printSquaresOfEvenNumbersInListFunctional(List<Integer> numbers) {
+		numbers.stream()
+			  .filter(number -> number % 2 == 0)
+			  // We want to map the number and print the square of the number (mapping - x -> x * x)
+			  .map(number -> number * number)
+			  .forEach(System.out::println);
+	}
+	
+	// How do we print the cube of each odd number?
+	private static void printCubeOfOddNumbersInListFunctional(List<Integer> numbers) {
+		numbers.stream()
+			  .filter(number -> number % 2 != 0)
+			  // We want to map the number and print the square of the number (mapping - x -> x * x)
+			  .map(number -> number * number * number)
 			  .forEach(System.out::println);
 	}
 
