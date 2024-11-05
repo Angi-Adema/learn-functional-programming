@@ -6,10 +6,26 @@ public class Challenge1Structured {
 
 	public static void main(String[] args) {
 
-		List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
+		//List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
+		List<String> courses = List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "AZURE", "Docker", "Kubernetes");
 		
 		//printAllNumbersInListStructured(numbers);
-		printEvenNumbersInListStructured(numbers);
+		//printEvenNumbersInListStructured(numbers);
+		//printOddNumbersInListStructured(numbers);
+		
+		// Print the courses individually.
+//		courses.stream()
+//			  .forEach(System.out::println);
+		
+		// Print all the courses containing the word "Spring".
+//		courses.stream()
+//		  .filter(course -> course.contains("Spring"))
+//		  .forEach(System.out::println);
+		
+		// Print the course names that contain at least 4 letters.
+		courses.stream()
+		  .filter(course -> course.length() >= 4)
+		  .forEach(System.out::println);
 
 	}
 
@@ -32,5 +48,14 @@ public class Challenge1Structured {
 		}
 
 	}
+	
+	// What if we only want to print the odd numbers in the list?
+	private static void printOddNumbersInListStructured(List<Integer> numbers) {
+		// How do we loop all the numbers?
+		for (int number : numbers) {
+			if (number % 2 != 0)
+			System.out.println(number);
+		}
 
+	}
 }

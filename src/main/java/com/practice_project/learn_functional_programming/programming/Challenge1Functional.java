@@ -9,7 +9,8 @@ public class Challenge1Functional {
 		List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
 		
 		//printAllNumbersInListFunctional(numbers);
-		printEvenNumbersInListFunctional(numbers);
+		//printEvenNumbersInListFunctional(numbers);
+		printOddNumbersInListFunctional(numbers);
 
 	}
 	
@@ -46,6 +47,13 @@ public class Challenge1Functional {
 			  .filter(number -> number % 2 == 0)   // We define a lambda expression rather than just the filter and method reference. Take number as the parameter and check if number % 2 == 0 and return it back.
 		      .forEach(System.out::println);  
 		
+	}
+	
+	// How do we print the odd numbers in a functional approach?
+	private static void printOddNumbersInListFunctional(List<Integer> numbers) {
+		numbers.stream()
+			  .filter(number -> number % 2 != 0)
+			  .forEach(System.out::println);
 	}
 
 }
